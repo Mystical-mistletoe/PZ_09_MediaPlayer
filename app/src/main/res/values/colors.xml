@@ -7,5 +7,5 @@
     <color name="btn_dark">#2C2C2E</color>
     <color name="btn_text">#FFFFFF</color>
     <color name="accent">#FF9500</color>
-    <color name="btn_green">#2E7D32</color>
+    <color name="btn_dark_blue">#3f4383</color>
 </resources>

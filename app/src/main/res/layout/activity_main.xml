@@ -6,171 +6,143 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/bg_light"
-    android:padding="5dp"
+    android:padding="8dp"
     tools:context=".MainActivity">
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <Button
-            android:id="@+id/btnStartHttp"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:onClick="onClickStart"
-            android:text="@string/http"
-            android:textSize="10sp" />
-        <Button
-            android:id="@+id/btnStartStream"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:onClick="onClickStart"
-            android:text="@string/stream"
-            android:textSize="10sp" />
-        <Button
-            android:id="@+id/btnStartSD"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:onClick="onClickStart"
-            android:text="@string/sd"
-            android:textSize="10sp" />
-        <Button
-            android:id="@+id/btnStartUri"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:onClick="onClickStart"
-            android:text="@string/uri"
-            android:textSize="10sp" />
-        <Button
-            android:id="@+id/btnStartRaw"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:onClick="onClickStart"
-            android:text="@string/raw"
-            android:textSize="10sp" />
-    </LinearLayout>
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:onClick="onClick"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_info"/>
     <View
         android:id="@+id/centerSquare"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/player_square"
         android:elevation="8dp"
         app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout1"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/controlsLayout" />
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
+        android:id="@+id/controlsLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <Button
+        app:layout_constraintBottom_toTopOf="@+id/sourcesLayout">
+        <ImageButton
+            android:id="@+id/btnBackward"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_back" />
+        <ImageButton
             android:id="@+id/btnPause"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:onClick="onClick"
-            android:text="@string/pause"
-            android:textSize="12sp" />
-        <Button
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_pause" />
+  2      <ImageButton
             android:id="@+id/btnResume"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:onClick="onClick"
-            android:text="@string/resume"
-            android:textSize="12sp" />
-        <Button
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_play" />
+        <ImageButton
             android:id="@+id/btnStop"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:onClick="onClick"
-            android:text="@string/stop"
-            android:textSize="12sp" />
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_stop" />
+        <ImageButton
+            android:id="@+id/btnForward"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="onClick"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_forward" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sourcesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <Button
+            android:id="@+id/btnStartHttp"
+            style="@style/blueButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:onClick="onClickStart"
+            android:text="@string/http" />
+        <Button
+            android:id="@+id/btnStartStream"
+            style="@style/blueButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:onClick="onClickStart"
+            android:text="@string/stream" />
+        <Button
+            android:id="@+id/btnStartSD"
+            style="@style/blueButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:onClick="onClickStart"
+            android:text="@string/sd" />
+        <Button
+            android:id="@+id/btnStartUri"
+            style="@style/blueButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:onClick="onClickStart"
+            android:text="@string/uri" />
+        <Button
+            android:id="@+id/btnStartRaw"
+            style="@style/blueButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onClickStart"
+            android:text="@string/raw" />
         <CheckBox
             android:id="@+id/chbLoop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="5dp"
-            android:text="@string/loop" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:buttonTint="@color/btn_dark_blue"
+            android:text="@string/loop"
+            android:textColor="@color/btn_dark" />
     </LinearLayout>
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/btnBackward"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:onClick="onClick"
-            android:text="@string/backward"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/btnForward"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:onClick="onClick"
-            android:text="@string/forward"
-            android:textSize="12sp" />
-
-        <Button
-            android:id="@+id/btnInfo"
-            style="@style/GreenButtonStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_margin="2dp"
-            android:onClick="onClick"
-            android:text="@string/info"
-            android:textSize="12sp" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

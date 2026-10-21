@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Стиль нашей зеленой кнопки -->
-    <style name="GreenButtonStyle" parent="Widget.AppCompat.Button">
+    <style name="blueButtonStyle" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/btn_style</item>
         <item name="backgroundTint">@null</item>
         <item name="android:textColor">@color/btn_text</item>
